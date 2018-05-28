@@ -1,8 +1,7 @@
 {
   "name": "react-project",
   "version": "0.1.0",
-  "private": true,
- "homepage": "https://github.com/thao7589/react-project.git",  "dependencies": {
+  "private": true,  "dependencies": {
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-scripts": "1.1.4"
@@ -13,4 +12,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
+  //hello
 }
