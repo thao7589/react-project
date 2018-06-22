@@ -1,34 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Input from './Assignment-01/UserInput';
+import Output from './Assignment-01/UserOutput';
 import './App.css';
-
+import './Person/Person.css'
 class App extends Component {
     constructor(props) {
       super(props);
       this.state = {
-          name: ''
+          check: false,
       };
       this.change = (ev) => {
-          console.log(ev)
           this.setState({
-                  name: ev.target.value
+                  [ev.target.id]: ev.target.value,
               }
           )
         }
+      this.login = () => {
+          let check = this.state.Password && this.state.Password == 'thao' ? true : false;
+          this.setState ({
+              check: check
+          })
+      }
     }
     render() {
     return (
-          <div className="App">
-            <header className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
-              <h1 className="App-title">Welcome to React</h1>
-            </header>
+        <div className="Person">
+            <Input change={this.change} login={this.login}/>
+            {
+                this.state.check && <Output name={this.state.Username}/>
+            }
 
-            <p className="App-intro">
-              Hello {this.state.name}!
-            </p>
-              <input type="text" onChange={this.change}></input>
-          </div>
+        </div>
         );
     }
 
